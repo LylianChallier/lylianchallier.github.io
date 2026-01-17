@@ -13,13 +13,15 @@
     "subdescription": "This year I was selected for the <1>Digital Tech Year</1> selective track, an innovation program, and awarded the <2>MathTech Gap Year fellowship</2> (4 laureates, FMJH). This experience bridges real-world AI innovation with my PhD-oriented research goals."
   },
   "starProject": {
-    "title": "Agentic AI Visit Assistant",
-    "desc": "AI assistant using LangChain & LangGraph for guided tours at the Palace of Versailles. Contextual responses, multilingual support, and real-time adaptation.",
+    "label": "Featured Project",
+    "title": "AI Travel Planner",
+    "desc": "Personal project using WebScraping and ColPali visual RAG for a travel planning agent. Ongoing project set to grow with additional features like MCP protocol tools.",
     "viewProject": "View project"
   },
   "activity": {
     "title": "Current Project",
-    "contributions": "contributions"
+    "projectTitle": "YOLOv11 Object Detection",
+    "projectDesc": "Real-time flood-sensitive object detection using YOLOv11 fine-tuning for Matmut insurance."
   },
   "goal": {
     "label": "Next Step",

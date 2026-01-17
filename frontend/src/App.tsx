@@ -5,7 +5,7 @@ import {
   ArrowUpRight, Target, Code,
   ExternalLink, BookOpen, GraduationCap, Briefcase, Globe, FileText, Star, Settings
 } from 'lucide-react';
-import JuliaBackground from './components/FractaleBackground';
+import FractaleBackground from './components/FractaleBackground';
 
 // Easing professionnel
 const smoothEase: [number, number, number, number] = [0.22, 1, 0.36, 1];
@@ -269,7 +269,7 @@ function App() {
   return (
     <div className="min-h-screen font-poppins relative">
       {/* Fond Julia interactif */}
-      <JuliaBackground />
+      <FractaleBackground />
 
       {/* Navbar flottante */}
       <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50">
@@ -282,11 +282,11 @@ function App() {
           <a href="#projets" className="text-sm text-ink-medium hover:text-royal-500 transition-colors">{t('nav.projects')}</a>
           <a href="#parcours" className="text-sm text-ink-medium hover:text-royal-500 transition-colors">{t('nav.journey')}</a>
           <a href="#blog" className="text-sm text-ink-medium hover:text-royal-500 transition-colors">{t('nav.blog')}</a>
-          <div className="w-px h-4 bg-royal-200" />
-          <LanguageSwitch />
-          <a href="https://www.linkedin.com/in/lylian-challier" className="text-sm text-ink-dark font-medium hover:text-royal-500 transition-colors">
+          <a href="mailto:lylian.challier@student-cs.fr" className="text-sm text-ink-dark font-medium hover:text-royal-500 transition-colors">
             {t('nav.contact')}
           </a>
+          <div className="w-px h-4 bg-royal-200" />
+          <LanguageSwitch />
         </motion.div>
       </nav>
 
@@ -361,20 +361,20 @@ function App() {
                   <div className="w-10 h-10 bg-royal-500/10 rounded-xl flex items-center justify-center">
                     <Star className="text-royal-500" size={20} />
                   </div>
-                  <span className="text-xs font-bold text-royal-500 uppercase tracking-wider">Featured Project</span>
+                  <span className="text-xs font-bold text-royal-500 uppercase tracking-wider">{t('starProject.label')}</span>
                 </div>
                 <h2 className="text-2xl md:text-3xl font-bold text-ink-dark mb-3">{t('starProject.title')}</h2>
                 <p className="text-ink-medium leading-relaxed text-sm">
                   {t('starProject.desc')}
                 </p>
                 <div className="flex flex-wrap gap-2 mt-4">
-                  {["LangChain", "LangGraph", "Python", "RAG"].map((tag, i) => (
+                  {["LangChain", "LangGraph", "ColPali", "Qdrant", "FastAPI"].map((tag, i) => (
                     <span key={i} className="text-xs text-royal-500 font-medium bg-royal-50 px-2 py-1 rounded-lg">#{tag}</span>
                   ))}
                 </div>
               </div>
               <a
-                href="https://github.com/lylianchallier"
+                href="https://github.com/lylianchallier/Lyliagent"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 text-royal-500 font-medium hover:text-royal-600 transition-colors mt-4"
@@ -398,10 +398,10 @@ function App() {
                   <Code size={14} className="text-royal-500" />
                   <span className="text-xs font-bold text-royal-500 uppercase tracking-wider">{t('activity.title')}</span>
                 </div>
-                <h3 className="font-bold text-ink-dark text-lg group-hover:text-royal-600 transition-colors">{t('starProject.title')}</h3>
+                <h3 className="font-bold text-ink-dark text-lg group-hover:text-royal-600 transition-colors">{t('activity.projectTitle')}</h3>
               </div>
               <p className="text-ink-medium text-sm leading-relaxed line-clamp-3">
-                {t('starProject.desc')}
+                {t('activity.projectDesc')}
               </p>
               <div className="flex items-center gap-1 text-ink-dark group-hover:text-royal-500 transition-colors text-sm font-medium">
                 <Github size={14} />

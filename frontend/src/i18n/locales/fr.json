@@ -9,17 +9,19 @@
   "hero": {
     "greeting": "",
     "name": "Lylian Challier",
-    "description": "Etudiant en Master a <1>CentraleSupelec</1>, specialise en mathematiques, IA, machine learning et deep learning, a la recherche d'une experience de 6 mois a partir de mars 2026 en vue d'une these CIFRE.",
-    "subdescription": "Cette annee, j'ai ete selectionne pour la <1>Digital Tech Year</1>, un programme d'innovation, et j'ai obtenu la bourse <2>MathTech Gap Year</2> (4 laureats, FMJH). Cette experience fait le lien entre l'innovation IA et mes objectifs de recherche doctorale."
+    "description": "Étudiant en Master à CentraleSupélec, spécialisé en mathématiques, en Machine Learning et en Deep Learning. Cette année, j’ai été sélectionné pour la Digital Tech Year, un programme d’innovation qui me permet de développer des compétences fortes en prototypage agile dans des projets concrets pour Renault Group, la Bibliothèque nationale de France ou encore la Matmut.",
+    "subdescription": "Avoir ces compétences sont essentielles pour passer de la théorie au concret. Je peux ainsi intervenir à plusieurs étapes d’un projet : théorie mathématique, architecture de modèle, algorithme d’optimisation, interprétations des résultats ainsi que sur le déploiement."
   },
   "starProject": {
-    "title": "Assistant IA Agentique",
-    "desc": "Assistant IA avec LangChain & LangGraph pour les visites guidees au Chateau de Versailles. Reponses contextuelles, support multilingue et adaptation temps reel.",
+    "label": "Projet Vedette",
+    "title": "Planificateur de Voyages IA",
+    "desc": "Projet personnel de WebScrapping et RAG visuel ColPali pour un agent de planification de voyages. Il est en cours et destiné à grandir avec des fonctionnalités supplémentaires comme l'ajout d'outils avec le protocole MCP.",
     "viewProject": "Voir le projet"
   },
   "activity": {
-    "title": "Projet en cours",
-    "contributions": "ok"
+    "title": "Actuellement",
+    "projectTitle": "POC pour la Matmut",
+    "projectDesc": "Détection d'objets en temps réel avec YOLOv11 ..."
   },
   "goal": {
     "label": "Objectif",
@@ -34,11 +36,11 @@
   },
   "blog": {
     "title": "Dernier Article",
-    "readMore": "Lire la suite",
+    "readMore": "En cours d'ajout sur le site",
     "latestPost": {
-      "title": "Construire des Systemes IA Agentiques",
-      "excerpt": "Comment j'ai construit un assistant intelligent avec LangChain et LangGraph pour le Chateau de Versailles...",
-      "date": "Jan 2025"
+      "title": "IA Explicable en Convection Turbulente",
+      "excerpt": "Résumé du projet de recherche mené au LISN sur la découverte de lois physiques avec de l'IA explicable...",
+      "date": "Sept. 2025"
     }
   },
   "tech": {
