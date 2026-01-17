@@ -3,6 +3,7 @@
     "home": "Home",
     "projects": "Projects",
     "journey": "Journey",
+    "blog": "Blog",
     "contact": "Contact"
   },
   "hero": {
@@ -11,15 +12,17 @@
     "description": "MSc student at <1>CentraleSupelec</1>, specialized in mathematics, AI, machine learning and deep learning, applying for a 6 month experience starting March 2026 as a step toward a future industrial PhD.",
     "subdescription": "This year I was selected for the <1>Digital Tech Year</1> selective track, an innovation program, and awarded the <2>MathTech Gap Year fellowship</2> (4 laureates, FMJH). This experience bridges real-world AI innovation with my PhD-oriented research goals."
   },
-  "about": {
-    "title": "Research & Innovation",
-    "description": "Passionate about bridging theoretical mathematics with practical AI applications. My work spans from explainable AI in physics to agentic systems for real-world applications."
+  "starProject": {
+    "title": "Agentic AI Visit Assistant",
+    "desc": "AI assistant using LangChain & LangGraph for guided tours at the Palace of Versailles. Contextual responses, multilingual support, and real-time adaptation.",
+    "viewProject": "View project"
   },
-  "location": {
-    "city": "Paris, France",
-    "institution": "CentraleSupelec"
+  "activity": {
+    "title": "Current Project",
+    "contributions": "contributions"
   },
   "goal": {
+    "label": "Next Step",
     "title": "Industrial PhD",
     "date": "March 2026"
   },
@@ -29,8 +32,21 @@
     "linkedin": "LinkedIn",
     "github": "GitHub"
   },
+  "blog": {
+    "title": "Latest Article",
+    "readMore": "Read more",
+    "latestPost": {
+      "title": "Building Agentic AI Systems",
+      "excerpt": "How I built an intelligent assistant using LangChain and LangGraph for the Palace of Versailles...",
+      "date": "Jan 2025"
+    }
+  },
   "tech": {
-    "title": "Languages & Tools"
+    "title": "Languages & Tools",
+    "core": "Core",
+    "backend": "Backend",
+    "prod": "Production",
+    "frontend": "Frontend"
   },
   "projects": {
     "title": "Projects",
@@ -102,6 +118,6 @@
     "button": "Get in touch"
   },
   "footer": {
-    "copyright": "© 2024 Lylian Challier. Built with React & Tailwind."
+    "copyright": "© 2026 Lylian Challier. Built with ♡ and Claude."
   }
 }

@@ -2,8 +2,8 @@ import { motion } from 'framer-motion';
 import { useTranslation, Trans } from 'react-i18next';
 import {
   Github, Linkedin, Mail,
-  ArrowUpRight, MapPin, Sparkles,
-  ExternalLink, BookOpen, GraduationCap, Briefcase, Globe
+  ArrowUpRight, Target, Code,
+  ExternalLink, BookOpen, GraduationCap, Briefcase, Globe, FileText, Star
 } from 'lucide-react';
 
 // Types
@@ -30,6 +30,11 @@ interface TimelineItemProps {
   description?: string;
 }
 
+interface TechSectionProps {
+  title: string;
+  items: { name: string; logo: string; color: string }[];
+}
+
 // Composant Bento Card
 const BentoItem = ({ children, className = "", colSpan = "col-span-1", rowSpan = "", accent = false }: BentoItemProps) => (
   <motion.div
@@ -54,8 +59,20 @@ const TechBadge = ({ name, logo, color }: { name: string; logo: string; color: s
   <img
     src={`https://img.shields.io/badge/${name}-${color}?style=for-the-badge&logo=${logo}&logoColor=white`}
     alt={name}
-    className="h-7 hover:scale-105 transition-transform"
+    className="h-6 hover:scale-105 transition-transform"
   />
+);
+
+// Section Tech
+const TechSection = ({ title, items }: TechSectionProps) => (
+  <div className="mb-4 last:mb-0">
+    <h3 className="text-xs font-bold text-royal-500 uppercase tracking-wider mb-2">{title}</h3>
+    <div className="flex flex-wrap gap-2">
+      {items.map((tech, i) => (
+        <TechBadge key={i} {...tech} />
+      ))}
+    </div>
+  </div>
 );
 
 // Carte Projet
@@ -169,20 +186,30 @@ function App() {
     }
   ];
 
-  const techStack = [
-    { name: "Python", logo: "python", color: "3776AB" },
-    { name: "PyTorch", logo: "pytorch", color: "EE4C2C" },
-    { name: "Scikit--learn", logo: "scikit-learn", color: "F7931E" },
-    { name: "NumPy", logo: "numpy", color: "013243" },
-    { name: "Pandas", logo: "pandas", color: "150458" },
-    { name: "R", logo: "r", color: "276DC3" },
-    { name: "React", logo: "react", color: "61DAFB" },
-    { name: "FastAPI", logo: "fastapi", color: "005571" },
-    { name: "Docker", logo: "docker", color: "257bd6" },
-    { name: "Git", logo: "git", color: "F05032" },
-    { name: "LaTeX", logo: "latex", color: "008080" },
-    { name: "Streamlit", logo: "streamlit", color: "FF4B4B" },
-  ];
+  const techSections = {
+    core: [
+      { name: "Python", logo: "python", color: "3776AB" },
+      { name: "PyTorch", logo: "pytorch", color: "EE4C2C" },
+      { name: "Scikit--learn", logo: "scikit-learn", color: "F7931E" },
+      { name: "NumPy", logo: "numpy", color: "013243" },
+      { name: "Pandas", logo: "pandas", color: "150458" },
+      { name: "R", logo: "r", color: "276DC3" },
+    ],
+    backend: [
+      { name: "FastAPI", logo: "fastapi", color: "005571" },
+      { name: "PostgreSQL", logo: "postgresql", color: "336791" },
+    ],
+    prod: [
+      { name: "Docker", logo: "docker", color: "257bd6" },
+      { name: "Git", logo: "git", color: "F05032" },
+      { name: "Linux", logo: "linux", color: "FCC624" },
+    ],
+    frontend: [
+      { name: "React", logo: "react", color: "61DAFB" },
+      { name: "Streamlit", logo: "streamlit", color: "FF4B4B" },
+      { name: "LaTeX", logo: "latex", color: "008080" },
+    ],
+  };
 
   return (
     <div className="min-h-screen font-poppins relative">
@@ -202,9 +229,10 @@ function App() {
           <a href="#" className="font-bold text-ink-dark hover:text-royal-500 transition-colors">{t('nav.home')}</a>
           <a href="#projets" className="text-sm text-ink-medium hover:text-royal-500 transition-colors">{t('nav.projects')}</a>
           <a href="#parcours" className="text-sm text-ink-medium hover:text-royal-500 transition-colors">{t('nav.journey')}</a>
+          <a href="#blog" className="text-sm text-ink-medium hover:text-royal-500 transition-colors">{t('nav.blog')}</a>
           <div className="w-px h-4 bg-royal-200" />
           <LanguageSwitch />
-          <a href="mailto:lylian.challier@universite-paris-saclay.fr" className="bg-royal-500 hover:bg-royal-600 text-white text-xs px-4 py-2 rounded-full transition-colors font-medium shadow-royal">
+          <a href="https://www.linkedin.com/in/lylian-challier" className="text-sm text-ink-dark font-medium hover:text-royal-500 transition-colors">
             {t('nav.contact')}
           </a>
         </motion.div>
@@ -214,111 +242,167 @@ function App() {
 
         {/* Header */}
         <header className="mb-16">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-ink-dark mb-6 leading-tight"
-          >
-            {t('hero.greeting')}{' '}
-            <span className="text-royal-500">{t('hero.name')}</span>
-            {/* <span className="inline-block ml-2 animate-pulse">🦁</span> */}
-          </motion.h1>
+          <div className="flex flex-col lg:flex-row lg:gap-8 lg:items-end">
+            {/* Bio */}
+            <div className="flex-1">
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-ink-dark mb-6 leading-tight"
+              >
+                {t('hero.greeting')}{' '}
+                <span className="text-royal-500">{t('hero.name')}</span>
+                {/* <span className="inline-block ml-2 animate-pulse">🦁</span> */}
+              </motion.h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-ink-medium text-lg md:text-xl max-w-3xl leading-relaxed"
-          >
-            <Trans i18nKey="hero.description">
-              MSc student at <span className="font-semibold text-royal-600">CentraleSupelec</span>, specialized in mathematics, AI, machine learning and deep learning, applying for a 6 month experience starting March 2026 as a step toward a future industrial PhD.
-            </Trans>
-          </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="text-ink-medium text-lg md:text-xl leading-relaxed"
+              >
+                <Trans i18nKey="hero.description">
+                  MSc student at <span className="font-semibold text-royal-600">CentraleSupelec</span>, specialized in mathematics, AI, machine learning and deep learning, applying for a 6 month experience starting March 2026 as a step toward a future industrial PhD.
+                </Trans>
+              </motion.p>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="text-ink-light text-base md:text-lg max-w-3xl leading-relaxed mt-4"
-          >
-            <Trans i18nKey="hero.subdescription">
-              This year I was selected for the <span className="font-medium text-ink-dark">Digital Tech Year</span> selective track, an innovation program, and awarded the <span className="font-medium text-ink-dark">MathTech Gap Year fellowship</span> (4 laureates, FMJH). This experience bridges real-world AI innovation with my PhD-oriented research goals.
-            </Trans>
-          </motion.p>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="text-ink-light text-base md:text-lg leading-relaxed mt-4"
+              >
+                <Trans i18nKey="hero.subdescription">
+                  This year I was selected for the <span className="font-medium text-ink-dark">Digital Tech Year</span> selective track, an innovation program, and awarded the <span className="font-medium text-ink-dark">MathTech Gap Year fellowship</span> (4 laureates, FMJH). This experience bridges real-world AI innovation with my PhD-oriented research goals.
+                </Trans>
+              </motion.p>
+            </div>
+
+            {/* Carte Contact */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+              className="bento-card p-6 mt-8 lg:mt-0 lg:w-64 lg:shrink-0"
+            >
+              <h3 className="text-xs font-bold text-royal-500 uppercase tracking-wider mb-4">{t('contact.title')}</h3>
+              <div className="flex flex-col gap-3">
+                <a href="mailto:lylian.challier@student-cs.fr" className="flex items-center gap-3 text-ink-medium hover:text-royal-500 transition-colors group">
+                  <div className="p-2 bg-royal-50 rounded-lg group-hover:bg-royal-100 transition-colors">
+                    <Mail size={16} className="text-royal-500" />
+                  </div>
+                  <span className="text-sm font-medium">{t('contact.email')}</span>
+                </a>
+                <a href="https://linkedin.com/in/lylian-challier" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-ink-medium hover:text-royal-500 transition-colors group">
+                  <div className="p-2 bg-royal-50 rounded-lg group-hover:bg-royal-100 transition-colors">
+                    <Linkedin size={16} className="text-royal-500" />
+                  </div>
+                  <span className="text-sm font-medium">{t('contact.linkedin')}</span>
+                </a>
+                <a href="https://github.com/lylianchallier" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-ink-medium hover:text-royal-500 transition-colors group">
+                  <div className="p-2 bg-royal-50 rounded-lg group-hover:bg-royal-100 transition-colors">
+                    <Github size={16} className="text-royal-500" />
+                  </div>
+                  <span className="text-sm font-medium">{t('contact.github')}</span>
+                </a>
+              </div>
+            </motion.div>
+          </div>
         </header>
 
         {/* Bento Grid Principal */}
         <section className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-16 auto-rows-[180px]">
 
-          {/* Grande carte: A propos */}
+          {/* Grande carte: Projet Star */}
           <BentoItem colSpan="md:col-span-2" rowSpan="md:row-span-2">
             <div className="flex flex-col justify-between h-full">
               <div>
-                <div className="w-14 h-14 bg-royal-500/10 rounded-2xl flex items-center justify-center mb-5">
-                  <Sparkles className="text-royal-500" size={26} />
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-10 h-10 bg-royal-500/10 rounded-xl flex items-center justify-center">
+                    <Star className="text-royal-500" size={20} />
+                  </div>
+                  <span className="text-xs font-bold text-royal-500 uppercase tracking-wider">Featured Project</span>
                 </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-ink-dark mb-3">{t('about.title')}</h2>
-                <p className="text-ink-medium leading-relaxed">
-                  {t('about.description')}
+                <h2 className="text-2xl md:text-3xl font-bold text-ink-dark mb-3">{t('starProject.title')}</h2>
+                <p className="text-ink-medium leading-relaxed text-sm">
+                  {t('starProject.desc')}
                 </p>
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {["LangChain", "LangGraph", "Python", "RAG"].map((tag, i) => (
+                    <span key={i} className="text-xs text-royal-500 font-medium bg-royal-50 px-2 py-1 rounded-lg">#{tag}</span>
+                  ))}
+                </div>
               </div>
-              <div className="flex gap-4 mt-6">
-                <a href="https://github.com/lylianchallier" target="_blank" rel="noopener noreferrer" className="p-3 rounded-xl bg-royal-50 text-royal-500 hover:bg-royal-100 transition-colors">
-                  <Github size={22} />
-                </a>
-                <a href="https://linkedin.com/in/lylian-challier" target="_blank" rel="noopener noreferrer" className="p-3 rounded-xl bg-royal-50 text-royal-500 hover:bg-royal-100 transition-colors">
-                  <Linkedin size={22} />
-                </a>
-                <a href="mailto:lylian.challier@universite-paris-saclay.fr" className="p-3 rounded-xl bg-royal-50 text-royal-500 hover:bg-royal-100 transition-colors">
-                  <Mail size={22} />
-                </a>
-              </div>
+              <a
+                href="https://github.com/lylianchallier"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-royal-500 font-medium hover:text-royal-600 transition-colors mt-4"
+              >
+                {t('starProject.viewProject')}
+                <ArrowUpRight size={18} />
+              </a>
             </div>
           </BentoItem>
 
-          {/* Carte Localisation */}
-          <BentoItem accent>
-            <div className="flex flex-col justify-center items-center h-full text-center">
-              <div className="animate-float">
-                <MapPin className="text-white/90 mb-3" size={36} />
+          {/* Carte Projet en cours */}
+          <BentoItem>
+            <a
+              href="https://github.com/lylianchallier"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col justify-between h-full group"
+            >
+              <div>
+                <div className="flex items-center gap-2 mb-1">
+                  <Code size={14} className="text-royal-500" />
+                  <span className="text-xs font-bold text-royal-500 uppercase tracking-wider">{t('activity.title')}</span>
+                </div>
+                <h3 className="font-bold text-ink-dark text-lg group-hover:text-royal-600 transition-colors">{t('starProject.title')}</h3>
               </div>
-              <h3 className="font-bold text-white text-xl">{t('location.city')}</h3>
-              <p className="text-sm text-royal-200 mt-1">{t('location.institution')}</p>
-            </div>
+              <p className="text-ink-medium text-sm leading-relaxed line-clamp-3">
+                {t('starProject.desc')}
+              </p>
+              <div className="flex items-center gap-1 text-ink-dark group-hover:text-royal-500 transition-colors text-sm font-medium">
+                <Github size={14} />
+                <span>GitHub</span>
+                <ArrowUpRight size={14} />
+              </div>
+            </a>
           </BentoItem>
 
-          {/* Carte Contact */}
+          {/* Carte Dernier Article Blog */}
           <BentoItem colSpan="md:col-span-1" rowSpan="md:row-span-2">
-            <h3 className="text-xs font-bold text-royal-500 uppercase tracking-wider mb-4">{t('contact.title')}</h3>
-            <div className="flex flex-col gap-4 flex-1">
-              <a href="mailto:lylian.challier@universite-paris-saclay.fr" className="flex items-center gap-3 text-ink-medium hover:text-royal-500 transition-colors group">
-                <div className="p-2 bg-royal-50 rounded-lg group-hover:bg-royal-100 transition-colors">
-                  <Mail size={18} className="text-royal-500" />
-                </div>
-                <span className="text-sm font-medium">{t('contact.email')}</span>
-              </a>
-              <a href="https://linkedin.com/in/lylian-challier" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-ink-medium hover:text-royal-500 transition-colors group">
-                <div className="p-2 bg-royal-50 rounded-lg group-hover:bg-royal-100 transition-colors">
-                  <Linkedin size={18} className="text-royal-500" />
-                </div>
-                <span className="text-sm font-medium">{t('contact.linkedin')}</span>
-              </a>
-              <a href="https://github.com/lylianchallier" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-ink-medium hover:text-royal-500 transition-colors group">
-                <div className="p-2 bg-royal-50 rounded-lg group-hover:bg-royal-100 transition-colors">
-                  <Github size={18} className="text-royal-500" />
-                </div>
-                <span className="text-sm font-medium">{t('contact.github')}</span>
+            <div className="flex flex-col h-full">
+              <div className="flex items-center gap-2 mb-3">
+                <FileText size={16} className="text-royal-500" />
+                <h3 className="text-xs font-bold text-royal-500 uppercase tracking-wider">{t('blog.title')}</h3>
+              </div>
+              <div className="flex-1 flex flex-col justify-center">
+                <span className="text-xs text-ink-light mb-1">{t('blog.latestPost.date')}</span>
+                <h4 className="text-lg font-bold text-ink-dark mb-2 leading-tight">{t('blog.latestPost.title')}</h4>
+                <p className="text-ink-light text-sm leading-relaxed">{t('blog.latestPost.excerpt')}</p>
+              </div>
+              <a
+                href="#blog"
+                className="inline-flex items-center gap-1 text-royal-500 font-medium text-sm hover:text-royal-600 transition-colors mt-3"
+              >
+                {t('blog.readMore')}
+                <ArrowUpRight size={14} />
               </a>
             </div>
           </BentoItem>
 
           {/* Carte Objectif */}
-          <BentoItem className="bg-gradient-to-br from-white to-paper-warm">
+          <BentoItem accent>
             <div className="flex flex-col justify-center items-center h-full text-center">
-              <span className="text-3xl mb-2">🎯</span>
-              <span className="text-sm text-ink-dark font-bold">{t('goal.title')}</span>
-              <span className="text-xs text-ink-light mt-1">{t('goal.date')}</span>
+              <div className="flex items-center gap-2 mb-2">
+                <Target size={14} className="text-white" />
+                <span className="text-xs font-bold text-white uppercase tracking-wider">{t('goal.label')}</span>
+              </div>
+              <span className="text-lg text-white font-bold">{t('goal.title')}</span>
+              <span className="text-sm text-white font-medium mt-1">{t('goal.date')}</span>
             </div>
           </BentoItem>
 
@@ -333,10 +417,11 @@ function App() {
             className="bento-card p-8"
           >
             <h2 className="text-2xl font-bold text-ink-dark mb-6">{t('tech.title')}</h2>
-            <div className="flex flex-wrap gap-3">
-              {techStack.map((tech, i) => (
-                <TechBadge key={i} {...tech} />
-              ))}
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <TechSection title={t('tech.core')} items={techSections.core} />
+              <TechSection title={t('tech.backend')} items={techSections.backend} />
+              <TechSection title={t('tech.prod')} items={techSections.prod} />
+              <TechSection title={t('tech.frontend')} items={techSections.frontend} />
             </div>
           </motion.div>
         </section>
@@ -449,12 +534,13 @@ function App() {
             className="bento-card-accent rounded-3xl p-8 md:p-12 text-center"
           >
             <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">{t('cta.title')}</h2>
-            <p className="text-royal-200 mb-6 max-w-xl mx-auto">
+            <p className="text-white/90 mb-6 max-w-xl mx-auto">
               {t('cta.description')}
             </p>
             <a
-              href="mailto:lylian.challier@universite-paris-saclay.fr"
-              className="inline-flex items-center gap-2 bg-white text-royal-600 font-semibold px-6 py-3 rounded-full hover:bg-royal-50 transition-colors"
+              href="https://linkedin.com/in/lylian-challier"
+              target="_blank"
+              className="cta-button inline-flex items-center gap-2 bg-white font-semibold px-6 py-3 rounded-full hover:bg-royal-50 transition-colors"
             >
               {t('cta.button')}
               <ArrowUpRight size={18} />

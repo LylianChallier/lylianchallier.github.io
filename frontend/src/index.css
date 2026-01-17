@@ -105,6 +105,15 @@ body {
   color: white;
 }
 
+.bento-card-accent *:not(.cta-button):not(.cta-button *) {
+  color: white !important;
+}
+
+.cta-button,
+.cta-button * {
+  color: var(--ink-dark) !important;
+}
+
 
 /* ===== Selection ===== */
 ::selection {

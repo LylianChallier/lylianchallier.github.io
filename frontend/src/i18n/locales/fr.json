@@ -3,6 +3,7 @@
     "home": "Accueil",
     "projects": "Projets",
     "journey": "Parcours",
+    "blog": "Blog",
     "contact": "Contact"
   },
   "hero": {
@@ -11,17 +12,19 @@
     "description": "Etudiant en Master a <1>CentraleSupelec</1>, specialise en mathematiques, IA, machine learning et deep learning, a la recherche d'une experience de 6 mois a partir de mars 2026 en vue d'une these CIFRE.",
     "subdescription": "Cette annee, j'ai ete selectionne pour la <1>Digital Tech Year</1>, un programme d'innovation, et j'ai obtenu la bourse <2>MathTech Gap Year</2> (4 laureats, FMJH). Cette experience fait le lien entre l'innovation IA et mes objectifs de recherche doctorale."
   },
-  "about": {
-    "title": "Recherche & Innovation",
-    "description": "Passionne par le lien entre mathematiques theoriques et applications pratiques de l'IA. Mes travaux vont de l'IA explicable en physique aux systemes agentiques pour des applications concretes."
+  "starProject": {
+    "title": "Assistant IA Agentique",
+    "desc": "Assistant IA avec LangChain & LangGraph pour les visites guidees au Chateau de Versailles. Reponses contextuelles, support multilingue et adaptation temps reel.",
+    "viewProject": "Voir le projet"
   },
-  "location": {
-    "city": "Paris, France",
-    "institution": "CentraleSupelec"
+  "activity": {
+    "title": "Projet en cours",
+    "contributions": "ok"
   },
   "goal": {
-    "title": "These CIFRE",
-    "date": "Mars 2026"
+    "label": "Objectif",
+    "title": "Thèse CIFRE",
+    "date": "Septembre 2027"
   },
   "contact": {
     "title": "Contact",
@@ -29,8 +32,21 @@
     "linkedin": "LinkedIn",
     "github": "GitHub"
   },
+  "blog": {
+    "title": "Dernier Article",
+    "readMore": "Lire la suite",
+    "latestPost": {
+      "title": "Construire des Systemes IA Agentiques",
+      "excerpt": "Comment j'ai construit un assistant intelligent avec LangChain et LangGraph pour le Chateau de Versailles...",
+      "date": "Jan 2025"
+    }
+  },
   "tech": {
-    "title": "Langages & Outils"
+    "title": "Langages & Outils",
+    "core": "Core",
+    "backend": "Backend",
+    "prod": "Production",
+    "frontend": "Frontend"
   },
   "projects": {
     "title": "Projets",
@@ -98,10 +114,10 @@
   },
   "cta": {
     "title": "Travaillons ensemble",
-    "description": "A la recherche d'une experience de 6 mois a partir de mars 2026. Ouvert aux stages de recherche et opportunites de these CIFRE.",
+    "description": "À la recherche d'une experience de 6 mois à partir de mars 2027. Ouvert aux stages de recherche et opportunités de thèse CIFRE.",
     "button": "Me contacter"
   },
   "footer": {
-    "copyright": "© 2024 Lylian Challier. Construit avec React & Tailwind."
+    "copyright": "© 2026 Lylian Challier. Construit avec ♡ et Claude."
   }
 }
