@@ -5,7 +5,7 @@ import {
   ArrowUpRight, Target, Code,
   ExternalLink, BookOpen, GraduationCap, Briefcase, Globe, FileText, Star
 } from 'lucide-react';
-import JuliaBackground from './components/JuliaBackground';
+import JuliaBackground from './components/FractaleBackground';
 
 // Types
 interface BentoItemProps {
