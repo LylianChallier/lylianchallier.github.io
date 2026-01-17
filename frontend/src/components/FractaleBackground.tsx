@@ -140,6 +140,10 @@ export default function JuliaBackground() {
         camera={{ position: [0, 0, 1] }}
         style={{ background: '#0a0a1a' }}
         gl={{ antialias: true, alpha: false }}
+        onCreated={() => {
+          console.log('WebGL context created successfully');
+        }}
+        fallback={<div style={{ background: '#0a0a1a', width: '100%', height: '100%' }} />}
       >
         <JuliaPlane />
       </Canvas>
