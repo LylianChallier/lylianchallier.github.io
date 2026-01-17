@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+/* ===== Variables CSS ===== */
+:root {
+  --royal-50: #eef2ff;
+  --royal-100: #e0e7ff;
+  --royal-200: #c7d2fe;
+  --royal-300: #a5b4fc;
+  --royal-400: #818cf8;
+  --royal-500: #4338ca;
+  --royal-600: #3730a3;
+  --royal-700: #312e81;
+  --royal-800: #1e1b4b;
+  --royal-900: #0f0d24;
+
+  --paper-bg: #e8e8e8;
+  --paper-light: #efefef;
+  --paper-dark: #d8d8d8;
+  --ink-dark: #1a1a2e;
+  --ink-medium: #3d3d5c;
+  --ink-light: #6b6b8a;
+}
+
+/* ===== Base Styles ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: var(--paper-bg);
+  color: var(--ink-dark);
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* ===== Paper Background ===== */
+.paper-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-color: #ebebeb;
+}
+
+/* Paper fiber overlay - disabled */
+.paper-fiber {
+  display: none;
+}
+
+/* Very subtle vignette */
+.paper-vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 101;
+  background: none;
+}
+
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--paper-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--royal-400);
+  border-radius: 5px;
+  border: 2px solid var(--paper-dark);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--royal-500);
+}
+
+/* ===== Bento Card Styles ===== */
+.bento-card {
+  background: linear-gradient(145deg, #ffffff 0%, #f8f8f8 100%);
+  border: 1px solid rgba(67, 56, 202, 0.08);
+  border-radius: 24px;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.04),
+    0 10px 40px -10px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+
+.bento-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 4px 6px rgba(67, 56, 202, 0.06),
+    0 20px 50px -10px rgba(67, 56, 202, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  border-color: rgba(67, 56, 202, 0.15);
+}
+
+/* Card with royal accent */
+.bento-card-accent {
+  background: linear-gradient(135deg, var(--royal-600) 0%, var(--royal-700) 100%);
+  border: 1px solid rgba(67, 56, 202, 0.3);
+  color: white;
+}
+
+
+/* ===== Selection ===== */
+::selection {
+  background-color: var(--royal-400);
+  color: white;
+}
+
+/* ===== Typography ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: var(--ink-dark);
+}
+
+/* ===== Animations ===== */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 2s ease-in-out infinite;
+}

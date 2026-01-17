@@ -1,0 +1,107 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "journey": "Journey",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hello! I'm",
+    "name": "Lylian Challier",
+    "description": "MSc student at <1>CentraleSupelec</1>, specialized in mathematics, AI, machine learning and deep learning, applying for a 6 month experience starting March 2026 as a step toward a future industrial PhD.",
+    "subdescription": "This year I was selected for the <1>Digital Tech Year</1> selective track, an innovation program, and awarded the <2>MathTech Gap Year fellowship</2> (4 laureates, FMJH). This experience bridges real-world AI innovation with my PhD-oriented research goals."
+  },
+  "about": {
+    "title": "Research & Innovation",
+    "description": "Passionate about bridging theoretical mathematics with practical AI applications. My work spans from explainable AI in physics to agentic systems for real-world applications."
+  },
+  "location": {
+    "city": "Paris, France",
+    "institution": "CentraleSupelec"
+  },
+  "goal": {
+    "title": "Industrial PhD",
+    "date": "March 2026"
+  },
+  "contact": {
+    "title": "Contact",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "tech": {
+    "title": "Languages & Tools"
+  },
+  "projects": {
+    "title": "Projects",
+    "items": {
+      "versailles": {
+        "title": "Agentic AI Visit Assistant",
+        "desc": "Agentic AI assistant for tourist visits at the Palace of Versailles."
+      },
+      "turbulence": {
+        "title": "Explainable AI for Turbulence",
+        "desc": "Discovery of wall laws in turbulent convection with SINDy and KAN."
+      },
+      "vae": {
+        "title": "Variational Auto-Encoders",
+        "desc": "VAE implementation with interactive Streamlit application."
+      },
+      "electric": {
+        "title": "Electric Demand Forecasting",
+        "desc": "Electric demand forecasting with Deep Learning for EDF."
+      },
+      "energy": {
+        "title": "Energy Consumption Modeling",
+        "desc": "Predictive modeling of energy consumption with R."
+      },
+      "movies": {
+        "title": "Movie Recommendations",
+        "desc": "Movie recommendation system with unsupervised learning."
+      }
+    }
+  },
+  "journey": {
+    "title": "Journey",
+    "education": "Education",
+    "experience": "Experience",
+    "items": {
+      "dty": {
+        "title": "Digital Tech Year",
+        "org": "CentraleSupelec",
+        "desc": "Innovation program, MathTech Gap Year fellowship (FMJH)"
+      },
+      "m1": {
+        "title": "M1 Mathematics & AI",
+        "org": "University Paris-Saclay"
+      },
+      "licence": {
+        "title": "Bachelor's in Mathematics",
+        "org": "University Paris-Saclay"
+      },
+      "versailles": {
+        "title": "AI Research Intern",
+        "org": "Palace of Versailles",
+        "desc": "Agentic AI visit assistant with LangChain"
+      },
+      "lisn": {
+        "title": "Research Intern",
+        "org": "LISN / CNRS",
+        "desc": "Explainable AI for turbulent convection"
+      },
+      "edf": {
+        "title": "Data Science Project",
+        "org": "EDF / Paris-Saclay",
+        "desc": "Electric demand forecasting"
+      }
+    }
+  },
+  "cta": {
+    "title": "Let's work together",
+    "description": "Looking for a 6-month experience starting March 2026. Open to research internships and industrial PhD opportunities.",
+    "button": "Get in touch"
+  },
+  "footer": {
+    "copyright": "© 2024 Lylian Challier. Built with React & Tailwind."
+  }
+}

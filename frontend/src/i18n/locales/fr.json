@@ -1,0 +1,107 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "projects": "Projets",
+    "journey": "Parcours",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "",
+    "name": "Lylian Challier",
+    "description": "Etudiant en Master a <1>CentraleSupelec</1>, specialise en mathematiques, IA, machine learning et deep learning, a la recherche d'une experience de 6 mois a partir de mars 2026 en vue d'une these CIFRE.",
+    "subdescription": "Cette annee, j'ai ete selectionne pour la <1>Digital Tech Year</1>, un programme d'innovation, et j'ai obtenu la bourse <2>MathTech Gap Year</2> (4 laureats, FMJH). Cette experience fait le lien entre l'innovation IA et mes objectifs de recherche doctorale."
+  },
+  "about": {
+    "title": "Recherche & Innovation",
+    "description": "Passionne par le lien entre mathematiques theoriques et applications pratiques de l'IA. Mes travaux vont de l'IA explicable en physique aux systemes agentiques pour des applications concretes."
+  },
+  "location": {
+    "city": "Paris, France",
+    "institution": "CentraleSupelec"
+  },
+  "goal": {
+    "title": "These CIFRE",
+    "date": "Mars 2026"
+  },
+  "contact": {
+    "title": "Contact",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "tech": {
+    "title": "Langages & Outils"
+  },
+  "projects": {
+    "title": "Projets",
+    "items": {
+      "versailles": {
+        "title": "Assistant IA Agentique",
+        "desc": "Assistant IA agentique pour visites touristiques au Chateau de Versailles."
+      },
+      "turbulence": {
+        "title": "IA Explicable pour la Turbulence",
+        "desc": "Decouverte de lois de paroi en convection turbulente avec SINDy et KAN."
+      },
+      "vae": {
+        "title": "Auto-Encodeurs Variationnels",
+        "desc": "Implementation de VAE avec application Streamlit interactive."
+      },
+      "electric": {
+        "title": "Prevision de Demande Electrique",
+        "desc": "Prevision de demande electrique avec Deep Learning pour EDF."
+      },
+      "energy": {
+        "title": "Modelisation Energetique",
+        "desc": "Modelisation predictive de consommation energetique avec R."
+      },
+      "movies": {
+        "title": "Recommandation de Films",
+        "desc": "Systeme de recommandation de films avec apprentissage non supervise."
+      }
+    }
+  },
+  "journey": {
+    "title": "Parcours",
+    "education": "Formation",
+    "experience": "Experience",
+    "items": {
+      "dty": {
+        "title": "Digital Tech Year",
+        "org": "CentraleSupelec",
+        "desc": "Programme d'innovation, bourse MathTech Gap Year (FMJH)"
+      },
+      "m1": {
+        "title": "M1 Mathematiques & IA",
+        "org": "Universite Paris-Saclay"
+      },
+      "licence": {
+        "title": "Licence Mathematiques",
+        "org": "Universite Paris-Saclay"
+      },
+      "versailles": {
+        "title": "Stagiaire Recherche IA",
+        "org": "Chateau de Versailles",
+        "desc": "Assistant IA agentique avec LangChain"
+      },
+      "lisn": {
+        "title": "Stagiaire Recherche",
+        "org": "LISN / CNRS",
+        "desc": "IA explicable pour la convection turbulente"
+      },
+      "edf": {
+        "title": "Projet Data Science",
+        "org": "EDF / Paris-Saclay",
+        "desc": "Prevision de demande electrique"
+      }
+    }
+  },
+  "cta": {
+    "title": "Travaillons ensemble",
+    "description": "A la recherche d'une experience de 6 mois a partir de mars 2026. Ouvert aux stages de recherche et opportunites de these CIFRE.",
+    "button": "Me contacter"
+  },
+  "footer": {
+    "copyright": "© 2024 Lylian Challier. Construit avec React & Tailwind."
+  }
+}
